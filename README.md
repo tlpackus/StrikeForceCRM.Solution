@@ -5,7 +5,7 @@ August- September 5th I spent roughly 8 hours looking into the Copper CRM to hel
 September 5th - 19th I did over 4 hours of additional research. I now knew that Copper used the Ruby on Rails relational database structure in their backend software. I could have just went back to C#, a similarly relational database I have experience and confidence in. Although something bothered me about that. I currently was learning React, Firebase and noSQL, a non relational database. So I wanted to know if it would be possible to build this using such libraries and a non relational database. Mostly due to the analytics firebase could potentially provide for the CRM users. Also to build clarity on when and why to use each different type of database. While its becoming clearer this is a topic I am still doing further research on. Lastly I discovered firebase also gives the functionality to securely assign admin users which would come in handy for the functionalities I'm planning to achieve.
 
 Sunday, Sep 26th
-9:00am: Researched why most CRM's and ERP's use relational databases
+9:00am: Researched specifically why most CRM's and ERP's use relational databases
 10:00am: Researched SalesForce to note their customer experience and database info
 10:20am: Looked into why Copper uses Ruby and Rails
 10:30am: Looked into why SalesForce uses Oracle
@@ -19,9 +19,10 @@ Sunday, Sep 26th
 4:00pm: Scanned through TTD workflow with C# lessons
 
 Monday, Sep 27th 
-11:00am: Researched why being ACID compliant was such an impacting factor for the CRM's currently available for business use.
+11:00am: Researched specifically why being ACID compliant was such an impacting factor for the CRM's currently available for business use.
 12:00pm: Recorded Sundays research above
 12:30pm: looked through commit history of my past C# project that used authentication, mySQL, and many to many relationships
 2:30pm: resumed where I left off in the TTD C# lessons to find more info
 3:00pm: Skimmed through TTD part 2 of C# lessons
-6:00pm: Researched current CRM's made using C# and found a couple that are available for free apparently so looked into that
+3:30pm: Skimmed through Database Basics
+6:00pm: Researched current CRM's made using C# and found a couple that are available to use for free but non with round robin functionality
