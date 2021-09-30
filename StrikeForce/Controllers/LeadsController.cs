@@ -48,5 +48,30 @@ namespace StrikeForce.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
+    public ActionResult Details(int id)
+    {
+      var thisLead = _db.Leads
+        .Include(lead => lead.JoinEntities)
+        .ThenInclude(join => join.SalesTeamMember)
+        .FirstOrDefault(lead => lead.LeadId == id);
+      return View(thisLead);
+    }
+    public ActionResult Edit(int id)
+    {
+      var thisLead = _db.Leads.FirstOrDefault(lead => lead.LeadId == id);
+      ViewBag.SalesTeamMemberId = new SelectList(_db.SalesTeamMembers, "SalesTeamMemberId", "FirstName");
+      return View(thisLead);
+    }
+    [HttpPost]
+    public ActionResult Edit(Lead lead, int SalesTeamMemberId)
+    {
+      if (SalesTeamMemberId != 0)
+      {
+        _db.LeadSalesTeamMember.Add(new LeadSalesTeamMember() { SalesTeamMemberId = SalesTeamMemberId, LeadId = lead.LeadId});
+      }
+      _db.Entry(lead).State = EntityState.Modified;
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
   }
 } 
