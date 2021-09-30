@@ -1,0 +1,40 @@
+@{
+  Layout = "_Layout";
+}
+
+@model StrikeForce.Models.Lead
+
+<h2>Lead Info</h2>
+<hr />
+<h3>@Html.DisplayNameFor(model => model.FirstName): @Html.DisplayFor(model => model.FirstName)<h3>
+<h3>@Html.DisplayNameFor(model => model.LastName): @Html.DisplayFor(model => model.LastName)<h3>
+<h3>@Html.DisplayNameFor(model => model.PhoneNumber): @Html.DisplayFor(model => model.PhoneNumber)<h3>
+<h3>@Html.DisplayNameFor(model => model.Email): @Html.DisplayFor(model => model.Email)<h3>
+<h3>@Html.DisplayNameFor(model => model.Status): @Html.DisplayFor(model => model.Status)<h3>
+<h3>@Html.DisplayNameFor(model => model.LeadType): @Html.DisplayFor(model => model.LeadType)<h3>
+<h3>@Html.DisplayNameFor(model => model.DateInfoAcquired): @Html.DisplayFor(model => model.DateInfoAcquired)<h3>
+<h3>@Html.DisplayNameFor(model => model.Notes): @Html.DisplayFor(model => model.Notes)<h3>
+
+@if(@Model.JoinEntities.Count ==0)
+{
+  <p>No sales team member have been assigned to this lead.</p>
+}
+else
+{
+  <h4>Sales Team Member assigned to lead:</h4>
+  <ul>
+    @foreach(var join in Model.JoinEntities)
+    {
+      <li>@join.SalesTeamMember.FirstName</li>
+      @using (Html.BeginForm("DeleteSalesTeamMember","Leads"))
+      {
+        @Html.Hidden("joinId", @join.LeadSalesTeamMemberId)
+        <input type="submit" value="Delete"/>
+      }
+    }
+  </ul>
+}
+
+<p>@Html.ActionLink("Edit/ Update Lead", "Edit", new { id = Model.LeadId })</p>
+<p>@Html.ActionLink("Add a new Team Member", "AddSalesTeamMember", new { id = Model.LeadId })</p>
+<p>@Html.ActionLink("Back to list", "Index")</p> 

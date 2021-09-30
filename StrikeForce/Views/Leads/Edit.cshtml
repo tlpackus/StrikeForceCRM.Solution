@@ -1,0 +1,43 @@
+@{
+  Layout = "_Layout";
+}
+
+@model StrikeForce.Models.Lead
+
+<h2>Edit</h2>
+
+<h4>Edit @Html.DisplayFor(model => model.FirstName) 's lead info</h>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.LeadId)
+  @Html.LabelFor(model => model.FirstName)
+  @Html.EditorFor(model => model.FirstName)
+
+  @Html.LabelFor(model => model.LastName)
+  @Html.EditorFor(model => model.LastName)
+
+  @Html.LabelFor(model => model.PhoneNumber)
+  @Html.EditorFor(model => model.PhoneNumber)
+
+  @Html.LabelFor(model => model.Email)
+  @Html.EditorFor(model => model.Email)
+
+  @Html.LabelFor(model => model.Status)
+  @Html.EditorFor(model => model.Status)
+
+  @Html.LabelFor(model => model.LeadType)
+  @Html.EditorFor(model => model.LeadType)
+
+  @Html.LabelFor(model => model.DateInfoAcquired)
+  @Html.EditorFor(model => model.DateInfoAcquired)
+
+  @Html.LabelFor(model => model.Notes)
+  @Html.EditorFor(model => model.Notes)
+
+  @Html.Label("Select SalesTeamMember")
+  @Html.DropDownList("SalesTeamMemberId")
+
+  <input type="submit" value="Save" />
+}
+<p>@Html.ActionLink("Back to list", "Index")</p> 
