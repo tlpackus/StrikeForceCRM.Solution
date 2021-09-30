@@ -1,0 +1,26 @@
+@{
+  Layout = "_Layout";
+}
+
+@using StrikeForce.Models;
+@model IEnumerable<StrikeForce.Models.Lead>
+
+<h1>Leads for @User.Identity.Name</h1>
+
+@if (Model.Any())
+{
+  <ul>
+    @foreach (Lead lead in Model)
+    {
+      <li>@Html.ActionLink($"{lead.FirstName}", "Details", new { id = lead.LeadId })</li>
+    }
+  </ul>
+} 
+else
+{
+  <h3>No leads have been added yet!</h3>
+}
+
+<p>@Html.ActionLink("Import new Leads", "Create")</p>
+
+<p>@Html.ActionLink("Home", "Index", "Home")</p> 

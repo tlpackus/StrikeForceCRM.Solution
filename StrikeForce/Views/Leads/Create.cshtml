@@ -1,0 +1,36 @@
+@{
+  Layout = "_Layout";
+}
+
+@model StrikeForce.Models.Lead
+
+<h4>Import new lead</h4>
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.FirstName)
+    @Html.TextBoxFor(model => model.FirstName)
+
+    @Html.LabelFor(model => model.LastName)
+    @Html.TextBoxFor(model => model.LastName)
+
+    @Html.LabelFor(model => model.PhoneNumber)
+    @Html.TextBoxFor(model => model.PhoneNumber)
+
+    @Html.LabelFor(model => model.Email)
+    @Html.TextBoxFor(model => model.Email)
+
+    @Html.LabelFor(model => model.Status)
+    @Html.TextBoxFor(model => model.Status)
+
+    @Html.LabelFor(model => model.LeadType)
+    @Html.TextBoxFor(model => model.LeadType)
+
+    @Html.LabelFor(model => model.DateInfoAcquired)
+    @Html.TextBoxFor(model => model.DateInfoAcquired)
+
+    @Html.Label("Notes on lead:")
+    @Html.TextBoxFor(model => model.Notes)
+
+    <input type="submit" value="Add new lead" class="btn btn-default" />
+}
+<p>@Html.ActionLink("Show all leads", "Index")</p> 
