@@ -1,3 +1,23 @@
+# StrikeForce CRM
+
+### By Theron Packus
+
+## Technologies Used
+
+* C#
+* .NET 5.0
+* ASP.NET Core MVC
+* ASP.NET Core Identity
+* Entity Framework Core
+* MVC
+* RESTful Routing, CRUD & HTTP
+* REPL
+* MySQL 
+* Bootstrap
+* HTML
+
+## Research Documentation
+
 <p>To start this project off I'd like to document some of the pre work that led to this projects creation. The first time I heard the term CRM was on August 5th when talking to a Media Management Company called Crystalline Media. I was inquiring info on what developer related technologies they use to run their business. When I found out they use a Customer Relationship Manager called Copper. They used it to distribute and track the progress of leads amongst their businesses sales staff. That sounded interesting and so I was wondering if they had any ideas for improvement. They did and that is what inspired me to build my own with this extra functionality.</p>
 
 <p><em>August- September 5th</em> I spent roughly 8 hours looking into the Copper CRM to help determine what functionality aspects make up a commercial CRM. Once discovering their backend was made with Ruby on Rails, that let me down the rabbit hole of relational vs non relational databases. I researched documentation and videos comparing noSQL, mySQL and SQLite. I also discovered Copper's developer API and did research on how that could potentially help implement the additional functionality my friends business was looking for.<p>
