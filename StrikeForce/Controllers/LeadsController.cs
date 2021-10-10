@@ -73,5 +73,19 @@ namespace StrikeForce.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
+    public ActionResult Delete(int id)
+    {
+      var thisLead = _db.Leads.FirstOrDefault(lead => lead.LeadId == id);
+      return View(thisLead);
+    }
+
+    [HttpPost, ActionName("Delete")]
+    public ActionResult DeleteConfirmed(int id)
+    {
+      var thisLead = _db.Leads.FirstOrDefault(lead => lead.LeadId == id);
+      _db.Leads.Remove(thisLead);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
   }
 } 
