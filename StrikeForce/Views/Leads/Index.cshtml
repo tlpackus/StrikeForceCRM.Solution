@@ -5,7 +5,7 @@
 @using StrikeForce.Models;
 @model IEnumerable<StrikeForce.Models.Lead>
 
-<h1>Leads for @User.Identity.Name</h1>
+<h1>Welcome @User.Identity.Name, these are your current leads.</h1>
 
 @if (Model.Any())
 {
@@ -21,6 +21,6 @@ else
   <h3>No leads have been added yet!</h3>
 }
 
-<p>@Html.ActionLink("Import new Leads", "Create")</p>
+<p>@Html.ActionLink("Import New Personal Leads", "Create")</p>
 
 <p>@Html.ActionLink("Home", "Index", "Home")</p> 
