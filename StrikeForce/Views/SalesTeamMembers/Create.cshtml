@@ -1,0 +1,18 @@
+@{
+  Layout = "_Layout";
+}
+
+@model StrikeForce.Models.SalesTeamMember
+
+<h4>Add a new Team Member:</h4>
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.FirstName)
+    @Html.TextBoxFor(model => model.FirstName)
+
+    @Html.LabelFor(model => model.LastName)
+    @Html.TextBoxFor(model => model.LastName)
+
+    <input type="submit" value="Add new Team Member" />
+}
+<p>@Html.ActionLink("Show all Team Members", "Index")</p> 
